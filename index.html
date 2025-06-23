@@ -9,34 +9,69 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    body { font-family: 'Noto Sans KR', sans-serif; }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 50;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.5);
-    }
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 700px;
-      max-height: 80vh;
-      overflow-y: auto;
-      position: relative;
-    }
-    .close {
-      color: #888;
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-    }
+            body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            display: none;
+        }
+        #formContainer {
+            display: block;
+        }
+        #successMessage {
+            display: none;
+            text-align: center;
+        }
+        #iframeContainer {
+            display: none;
+        }
+        .date-inputs {
+            display: flex;
+            gap: 10px;
+        }
+        .phone-inputs {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
