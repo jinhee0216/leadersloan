@@ -126,7 +126,7 @@
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbz34_5MuNi3NixW9tLClTir4S55XJb54PNAUm_SBqsknVmTe_O8rlhNRZUhKRQ2hYAJig/exec';
 
-    $('#심사양식').on('submit', function(e) {
+      $('#심사양식').on('submit', function(e) {
       e.preventDefault();
       const phone1 = $('#phone1').val();
       const phone2 = $('#phone2').val();
@@ -135,14 +135,13 @@
       $('#fullPhone').val(fullPhone);
 
       const formData = $(this).serialize();
+      $('#formContainer').hide();
+      $('#successMessage').removeClass('hidden').show();
+
       $.post(GAS_URL, formData)
-        .done(() => {
-          $('#formContainer').hide();
-          $('#successMessage').removeClass('hidden').show();
-        })
         .fail(() => {
           alert('❌ 제출 중 오류가 발생했습니다. 다시 시도해주세요.');
-        });
+        })
     });
   </script>
 </body>
