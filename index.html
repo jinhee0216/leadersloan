@@ -43,8 +43,13 @@
     <h2 class="text-2xl font-bold mb-6 text-center"></h2>
     <form id="심사양식" class="space-y-4">
       <div>
-        <label class="block font-medium">연락처 <span class="text-red-500">*</span></label>
-        <input type="text" name="연락처" required class="w-full p-2 border rounded-md" placeholder="010-1234-5678" />
+        <label class="block text-sm font-semibold text-gray-700">연락처 <span class="text-red-500">*</span></label>
+<div class="flex gap-2">
+  <input type="text" id="phone1" maxlength="3" class="w-1/3 p-3 border border-gray-300 rounded-xl shadow-sm text-center" required placeholder="000" />
+  <input type="text" id="phone2" maxlength="4" class="w-1/3 p-3 border border-gray-300 rounded-xl shadow-sm text-center" required placeholder="0000" />
+  <input type="text" id="phone3" maxlength="4" class="w-1/3 p-3 border border-gray-300 rounded-xl shadow-sm text-center" required placeholder="0000" />
+  <input type="hidden" name="연락처" id="fullPhone" />
+</div>  
       </div>
       <div>
         <label class="block font-medium">상호명</label>
@@ -152,6 +157,14 @@
 
     $('#심사양식').on('submit', function(e) {
       e.preventDefault();
+
+       // 전화번호 조합
+      const phone1 = $('#phone1').val();
+      const phone2 = $('#phone2').val();
+      const phone3 = $('#phone3').val();
+      const fullPhone = `${phone1}-${phone2}-${phone3}`;
+      $('#fullPhone').val(fullPhone);
+      
       const formData = $(this).serialize();
 
       $.post(GAS_URL, formData)
