@@ -147,17 +147,23 @@
     </div>
   </div>
 </div>
-
-      </div>
+ 
+      <div class="pt-4 text-center">
+          <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-6 py-3 rounded-full shadow-md transition">제출</button>
+        </div>
+        <div id="결과" class="text-center text-green-600 font-bold text-sm pt-2"></div>
+      </form>
     </div>
-  </div>
 
-  
     <div id="successMessage" class="hidden text-center">
-      <h1 class="text-2xl font-bold text-gray-800 mb-4">신청서 접수가 완료되었습니다.</h1>
-      <p class="text-sm text-gray-600 mb-4">감사합니다. 제출해주신 내용 확인 후 담당자가 연락드리겠습니다.</p>
-      <a class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" href="index.html">돌아가기</a>
-    </div>
+  <h1 class="text-2xl font-bold text-gray-800 mb-4">신청서 접수가 완료되었습니다.</h1>
+  <p class="text-sm text-gray-600 mb-4">감사합니다. 제출해주신 내용 확인 후 담당자가 연락드리겠습니다.</p>
+  <a class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" href="index.html">돌아가기</a>
+</div>
+  <div class="hidden md:block">
+    <img src="img/thankyou.png" alt="감사 이미지" class="w-full max-w-xs mx-auto" />
+  </div>
+</div>
     <div id="iframeContainer"></div>
   </div>
 
@@ -178,7 +184,7 @@
       $.post(GAS_URL, formData)
         .done(() => {
           $('#formContainer').hide();
-          $('#successMessage').removeClass('hidden').addClass('block');
+$('#successMessage').removeClass('hidden').show();
         })
         .fail(() => {
           $('#결과').text('❌ 제출 중 오류가 발생했습니다. 다시 시도해주세요.');
