@@ -66,11 +66,13 @@
       </div>
 
       <div class="flex items-center">
-        <input type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-        <span class="ml-2 text-sm text-gray-600">
-          <a href="#" class="text-indigo-600 underline">개인정보 처리방침</a>에 동의합니다.
-        </span>
-      </div>
+  <input type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
+  <span class="ml-2 text-sm text-gray-600">
+    <a href="#" 
+       onclick="document.getElementById('privacyModal').classList.remove('hidden')" 
+       class="text-indigo-600 underline">개인정보 처리방침</a>에 동의합니다.
+  </span>
+</div>
 
       <div class="flex items-center">
         <input type="checkbox" name="마케팅동의" value="동의함" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
