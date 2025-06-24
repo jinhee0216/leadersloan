@@ -144,5 +144,12 @@
         })
     });
   </script>
+
+    <!-- ✅ 우클릭 & 드래그 방지 스크립트 추가 -->
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+  </script>
+
 </body>
 </html>
