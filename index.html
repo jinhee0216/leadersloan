@@ -27,7 +27,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-sm text-gray-600 mb-1">연락처</label>
+          <label class="block text-sm text-gray-600 mb-1">연락처<span class="text-red-500">*</span></label>
           <div class="flex gap-2">
             <input type="text" id="phone1" maxlength="3" class="w-full border rounded-md p-2 text-center" placeholder="010" />
             <input type="text" id="phone2" maxlength="4" class="w-full border rounded-md p-2 text-center" placeholder="1234" />
@@ -36,31 +36,31 @@
           <input type="hidden" name="연락처" id="fullPhone" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">상호명</label>
+          <label class="block text-sm text-gray-600 mb-1">상호명<span class="text-red-500">*</span></label>
           <input type="text" name="상호명" class="w-full border rounded-md p-2" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">지역</label>
+          <label class="block text-sm text-gray-600 mb-1">지역<span class="text-red-500">*</span></label>
           <input type="text" name="지역" class="w-full border rounded-md p-2" placeholder="예) 서울 종로구" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">개업년월</label>
+          <label class="block text-sm text-gray-600 mb-1">개업년월<span class="text-red-500">*</span></label>
           <input type="text" name="개업년월" class="w-full border rounded-md p-2" placeholder="예) 20/04" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">임대료/보증금</label>
+          <label class="block text-sm text-gray-600 mb-1">임대료/보증금<span class="text-red-500">*</span></label>
           <input type="text" name="임대료보증금" class="w-full border rounded-md p-2" placeholder="예) 1000/80" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">신용정보등록</label>
+          <label class="block text-sm text-gray-600 mb-1">신용정보등록<span class="text-red-500">*</span></label>
           <input type="text" name="신용정보등록" class="w-full border rounded-md p-2" placeholder="예) 개인회생,신용회복,새출발기금 등"  />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">세금체납</label>
+          <label class="block text-sm text-gray-600 mb-1">세금체납<span class="text-red-500">*</span></label>
           <input type="text" name="세금체납" class="w-full border rounded-md p-2" placeholder="예) 부가세1000만원 미납중" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">정책자금 이용</label>
+          <label class="block text-sm text-gray-600 mb-1">정책자금 이용<span class="text-red-500">*</span></label>
           <input type="text" name="정책자금" class="w-full border rounded-md p-2" placeholder="예) 소상공인 작년6월" />
         </div>
       </div>
@@ -90,6 +90,27 @@
       <a class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" href="index.html">돌아가기</a>
     </div>
   </div>
+
+
+  <!-- 개인정보 처리방침 모달 -->
+  <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-6 max-w-2xl w-full rounded-lg shadow-lg overflow-y-auto max-h-[80vh] relative">
+      <button onclick="document.getElementById('privacyModal').classList.add('hidden')" class="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl">&times;</button>
+      <h2 class="text-xl font-bold mb-4">개인정보 수집 및 이용동의서</h2>
+      <p class="text-sm text-gray-700">
+        리더스론(이하 "회사")은 『개인정보 보호법』 등 관련 법령에 따라 귀하의 개인정보를 다음과 같이 수집·이용하고자 합니다.<br/><br/>
+        <strong>1. 수집 항목</strong><br/>
+        연락처, 상호명, 지역, 개업년월, 임대료/보증금, 신용정보등록 여부, 세금체납 여부, 정책자금 이용여부, 마케팅 수신 동의 여부 (선택)<br/><br/>
+        <strong>2. 수집 및 이용 목적</strong><br/>
+        정책자금 상담 및 접수 업무, 사후 연락 등<br/><br/>
+        <strong>3. 보유 및 이용 기간</strong><br/>
+        수집일로부터 1년간 보관 후 파기 (법령에 따라 보존 필요 시 예외)<br/><br/>
+        <strong>4. 동의 거부 권리</strong><br/>
+        귀하는 개인정보 제공에 대해 거부할 권리가 있으며, 거부 시 서비스 제공이 제한될 수 있습니다.
+      </p>
+    </div>
+  </div>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
