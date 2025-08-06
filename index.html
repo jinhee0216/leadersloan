@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -27,6 +26,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
+          <label class="block text-sm text-gray-600 mb-1">고객명<span class="text-red-500">*</span></label>
+          <input type="text" name="고객명" required class="w-full border rounded-md p-2" placeholder="예) 홍길동" />
+        </div>
+        <div>
           <label class="block text-sm text-gray-600 mb-1">연락처<span class="text-red-500">*</span></label>
           <div class="flex gap-2">
             <input type="text" id="phone1" maxlength="3" required class="w-full border rounded-md p-2 text-center" placeholder="010" />
@@ -53,26 +56,24 @@
         </div>
         <div>
           <label class="block text-sm text-gray-600 mb-1">신용정보등록(개인회생,신용회복,새출발기금 등)<span class="text-red-500">*</span></label>
-          <input type="text" name="신용정보등록" required class="w-full border rounded-md p-2 placeholder:text-sm" placeholder="(인가확정,변제회차수/해당되지 않는경우 없음)"  />
+          <input type="text" name="신용정보등록" required class="w-full border rounded-md p-2 placeholder:text-sm" placeholder="(인가확정여부,변제회차수/해당되지 않는경우 없음)" />
         </div>
         <div>
           <label class="block text-sm text-gray-600 mb-1">세금체납<span class="text-red-500">*</span></label>
           <input type="text" name="세금체납" required class="w-full border rounded-md p-2 placeholder:text-sm" placeholder="예)부가세1000만원/해당되지 않는경우 없음" />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-1">정책자금 이용<span class="text-red-500">*</span></label>
-          <input type="text" name="정책자금" required class="w-full border rounded-md p-2" placeholder="예)소상공인 작년6월" />
+          <label class="block text-sm text-gray-600 mb-1">정책자금 이용유무(기관/날짜/금액)<span class="text-red-500">*</span></label>
+          <input type="text" name="정책자금" required class="w-full border rounded-md p-2" placeholder="예)신용보증재단 작년6월 3천만원" />
         </div>
       </div>
 
       <div class="flex items-center">
-  <input type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-  <span class="ml-2 text-sm text-gray-600">
-    <a href="#" 
-       onclick="document.getElementById('privacyModal').classList.remove('hidden')" 
-       class="text-indigo-600 underline">개인정보 처리방침</a>에 동의합니다.
-  </span>
-</div>
+        <input type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
+        <span class="ml-2 text-sm text-gray-600">
+          <a href="#" onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="text-indigo-600 underline">개인정보 처리방침</a>에 동의합니다.
+        </span>
+      </div>
 
       <div class="flex items-center">
         <input type="checkbox" name="마케팅동의" value="동의함" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
@@ -93,7 +94,6 @@
     </div>
   </div>
 
-
   <!-- 개인정보 처리방침 모달 -->
   <div id="privacyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
     <div class="bg-white p-6 max-w-2xl w-full rounded-lg shadow-lg overflow-y-auto max-h-[80vh] relative">
@@ -102,7 +102,7 @@
       <p class="text-sm text-gray-700">
         리더스론(이하 "회사")은 『개인정보 보호법』 등 관련 법령에 따라 귀하의 개인정보를 다음과 같이 수집·이용하고자 합니다.<br/><br/>
         <strong>1. 수집 항목</strong><br/>
-        연락처, 상호명, 지역, 개업년월, 임대료/보증금, 신용정보등록 여부, 세금체납 여부, 정책자금 이용여부, 마케팅 수신 동의 여부 (선택)<br/><br/>
+        고객명, 연락처, 상호명, 지역, 개업년월, 임대료/보증금, 신용정보등록 여부, 세금체납 여부, 정책자금 이용여부, 마케팅 수신 동의 여부 (선택)<br/><br/>
         <strong>2. 수집 및 이용 목적</strong><br/>
         정책자금 상담 및 접수 업무, 사후 연락 등<br/><br/>
         <strong>3. 보유 및 이용 기간</strong><br/>
@@ -112,7 +112,6 @@
       </p>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
